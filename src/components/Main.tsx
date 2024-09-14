@@ -135,13 +135,13 @@ export default function Main() {
                 }
             </section>
             <footer className="fixed md:hidden bottom-0 left-0 w-full">
-                <span className={`${section !== 0 ? 'translate-x-[-500px]' : ''} cloud transition-all duration-500 absolute -bottom-1 -left-16 drop-shadow-[4px_4px_16px_rgba(0,0,0,.25)]`}>
+                <span className={`${section !== 0 ? 'translate-x-[-500px]' : ''} cloud transition-all duration-500 absolute -bottom-[3.5rem] -left-16 drop-shadow-[4px_4px_16px_rgba(0,0,0,.25)]`}>
                     <FaCloud color='white' size={350} />
                 </span>
-                <span className={`${section !== 0 ? 'translate-x-[500px]' : ''} cloud transition-all duration-[750ms] absolute -bottom-14 -right-16 drop-shadow-[-4px_-4px_16px_rgba(0,0,0,.25)]`}>
+                <span className={`${section !== 0 ? 'translate-x-[500px]' : ''} cloud transition-all duration-[750ms] absolute -bottom-[6.75rem] -right-16 drop-shadow-[-4px_-4px_16px_rgba(0,0,0,.25)]`}>
                     <FaCloud color='white' size={350} />
                 </span>
-                <span className={`${section !== 0 ? 'translate-x-[-500px]' : ''} cloud transition-all duration-1000 absolute -bottom-28 -left-24 drop-shadow-[4px_4px_16px_rgba(0,0,0,.25)]`}>
+                <span className={`${section !== 0 ? 'translate-x-[-500px]' : ''} cloud transition-all duration-1000 absolute -bottom-28 -left-[9.25rem] drop-shadow-[4px_4px_16px_rgba(0,0,0,.25)]`}>
                     <FaCloud color='white' size={350} />
                 </span>
                 <span className={`${section !== 1 ? 'translate-y-[500px]' : subSection === 1 ? '' : subSection === 2 ? 'rotate-90' : 'rotate-180'} transition-all duration-[750ms] w-full absolute -bottom-[195px]`}>
