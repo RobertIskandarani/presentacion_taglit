@@ -10,6 +10,10 @@ footer .cloud:nth-child(3) {
     animation: cloudLeft .5s ease-in-out;
 }
 
+footer .element {
+    left: calc((100% - 390px)/2);
+}
+
 footer .orbit-1::before {
     content: '';
     width: 360px;
