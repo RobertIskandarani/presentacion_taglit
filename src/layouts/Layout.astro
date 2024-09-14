@@ -10,9 +10,12 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Presentación de Robert Iskandarani para Taglit" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Rubik+Mono+One&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,29 +25,27 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--bg-cloudy: #667AC8;
+		--bg-sun: #4369FF;
+		--bg-moon: #040035;
+		--bg-planets: #04001C;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: 'Rubik Mono One', sans-serif;
+		background-color: black;
+		color: white;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	.rubik-mono-one-regular {
+		font-family: "Rubik Mono One", monospace;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.rubik-doodle-shadow-regular {
+	font-family: "Rubik Doodle Shadow", system-ui;
+	font-weight: 400;
+	font-style: normal;
 	}
 </style>
