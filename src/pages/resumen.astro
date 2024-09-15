@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DescriptionCard from '../components/DescriptionCard';
+
+const subSectionsInfo = [
+        {
+            src: '/assets/formal1.png',
+            title: 'Construcciones',
+            backgroundColor: 'bg-[var(--bg-sun)]'
+        },
+        {
+            src: '/assets/formal2.png',
+            title: 'Ingeniería en Informática',
+            backgroundColor: 'bg-[var(--bg-sun)]'
+        },
+        {
+            src: '/assets/formal3.png',
+            title: 'Ingeniero Informático',
+            backgroundColor: 'bg-[var(--bg-sun)]'
+        },
+        {
+            src: '/assets/noformal1.png',
+            title: 'Madrij - 4 años',
+            backgroundColor: 'bg-[var(--bg-moon)]'
+        },
+        {
+            src: '/assets/noformal2.png',
+            title: 'Mejanej - 2 años',
+            backgroundColor: 'bg-[var(--bg-moon)]'
+        },
+        {
+            src: '/assets/noformal3.png',
+            title: 'Coordinador',
+            backgroundColor: 'bg-[var(--bg-moon)]'
+        },
+        {
+            src: '/assets/random1.png',
+            title: 'Juegos',
+            backgroundColor: 'bg-[var(--bg-planets)]'
+        },
+        {
+            src: '/assets/random2.png',
+            title: 'Cubo de Rubik',
+            backgroundColor: 'bg-[var(--bg-planets)]'
+        },
+        {
+            src: '/assets/random3.png',
+            title: 'Diseño y Edición',
+            backgroundColor: 'bg-[var(--bg-planets)]'
+        }
+];
+---
+
+<Layout title="Presentación Taglit | Robert Iskandarani">
+    <main class="w-full h-screen flex flex-col gap-5 p-20 bg-[var(--bg-cloudy)]">
+        <section class="w-full flex gap-5 h-52">
+            {subSectionsInfo.slice(0,3).map(subSection => 
+                <DescriptionCard src={''} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
+            )}
+        </section>
+        <section class="w-full flex gap-5 h-52">
+            {subSectionsInfo.slice(3,6).map(subSection => 
+                <DescriptionCard src={''} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
+            )}
+        </section>
+        <section class="w-full flex gap-5 h-52">
+            {subSectionsInfo.slice(6,9).map(subSection => 
+                <DescriptionCard src={''} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
+            )}
+        </section>
+        <section class="w-full text-5xl rubik-doodle-shadow-regular flex gap-5 justify-center items-center py-5">
+            MADRIJ TAGLIT 2025...
+        </section>
+    </main>
+</Layout>

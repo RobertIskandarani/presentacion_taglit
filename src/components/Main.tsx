@@ -32,7 +32,7 @@ const sectionsCards: CardProps[] = [
 const sectionsInfo = [
     {
         backgroundColor: 'bg-[var(--bg-cloudy)]',
-        title: 'Roberto\nEzequiel\nIskandarani',
+        title: 'Hola,\nSoy Robert!',
     },
     {
         backgroundColor: 'bg-[var(--bg-sun)]',
@@ -172,8 +172,9 @@ export default function Main() {
                     </span>
                 </div>
 
-                <button onClick={nextSubSection} className={`${section === 0 ? 'translate-y-[500px]' : 'translate-y-0'} ${section === 2 && subSection === 2 ? 'text-black' : sectionsInfo[section].color} transition-all duration-[750ms] absolute bottom-5 left-1/2 -translate-x-1/2 text-3xl`}>{subSection === 3 ? 'RESET' : 'NEXT'}</button>
+                <button onClick={nextSubSection} className={`${section === 0 ? 'translate-y-[500px]' : 'translate-y-0'} ${section === 2 && subSection === 2 ? 'text-black' : sectionsInfo[section].color} transition-all p-5 rounded-full duration-[750ms] absolute bottom-0 left-1/2 -translate-x-1/2 text-3xl`}>{subSection === 3 ? 'RESET' : 'NEXT'}</button>
             </footer>
+            <a href="/resumen" className="absolute bottom-5 right-5 hidden md:flex">Ver resumen</a>
         </main>
     )
 }
