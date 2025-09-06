@@ -7,20 +7,30 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "strapi:dev": "cd backend && npm run develop",
+    "strapi:build": "cd backend && npm run build",
+    "strapi:start": "cd backend && npm run start",
+    "dev:all": "concurrently \"npm run strapi:dev\" \"npm run dev\"",
+    "build:all": "npm run strapi:build && npm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/react": "^3.6.2",
-    "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.8.1",
+    "@strapi/client": "^1.5.0",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.6",
+    "clsx": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
-    "tailwindcss": "^3.4.11",
     "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^4.0.0"
   }
 }

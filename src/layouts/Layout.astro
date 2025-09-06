@@ -1,4 +1,6 @@
 ---
+import '../styles/index.css';
+
 interface Props {
 	title: string;
 }
@@ -24,13 +26,6 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	:root {
-		--bg-cloudy: #667AC8;
-		--bg-sun: #4369FF;
-		--bg-moon: #040035;
-		--bg-planets: #04001C;
-	}
-
 	html {
 		font-family: 'Rubik Mono One', sans-serif;
 		background-color: black;
@@ -44,8 +39,8 @@ const { title } = Astro.props;
 	}
 
 	.rubik-doodle-shadow-regular {
-	font-family: "Rubik Doodle Shadow", system-ui;
-	font-weight: 400;
-	font-style: normal;
+		font-family: "Rubik Doodle Shadow", system-ui;
+		font-weight: 400;
+		font-style: normal;
 	}
 </style>

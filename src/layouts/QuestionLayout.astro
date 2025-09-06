@@ -1,0 +1,56 @@
+---
+import '../styles/index.css';
+import AnswerInput from '../components/AnswerInput';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content='Presentación de Robert Iskandarani para Taglit'
+    />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Rubik+Mono+One&display=swap'
+      rel='stylesheet'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class='flex flex-col items-center justify-center h-screen'>
+      <slot />
+      <AnswerInput client:idle />
+    </div>
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: 'Rubik Mono One', sans-serif;
+    background-color: var(--color-bg-planets);
+    color: white;
+  }
+
+  .rubik-mono-one-regular {
+    font-family: 'Rubik Mono One', monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .rubik-doodle-shadow-regular {
+    font-family: 'Rubik Doodle Shadow', system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
