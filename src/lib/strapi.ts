@@ -2,7 +2,9 @@ import { Strapi } from '@strapi/client';
 
 // Strapi client configuration
 const strapi = new Strapi({
-  url: process.env.STRAPI_URL || 'https://presentacion-taglit.onrender.com',
+  url:
+    process.env.STRAPI_URL ||
+    'https://taglit-backend-production.up.railway.app',
   apiToken: process.env.STRAPI_API_TOKEN || '', // Add your API token here
 });
 
@@ -10,7 +12,7 @@ export default strapi;
 
 // Helper function to get the base URL for Strapi
 export function getStrapiURL(path = '') {
-  return `${process.env.STRAPI_URL || 'https://presentacion-taglit.onrender.com'}${path}`;
+  return `${process.env.STRAPI_URL || 'https://taglit-backend-production.up.railway.app'}${path}`;
 }
 
 // Helper function to get Strapi media URLs

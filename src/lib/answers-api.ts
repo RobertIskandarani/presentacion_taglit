@@ -26,11 +26,14 @@ function getStrapiUrl(): string {
     // Client-side: use environment variable or fallback
     return (
       import.meta.env.PUBLIC_STRAPI_URL ||
-      'https://presentacion-taglit.onrender.com'
+      'https://taglit-backend-production.up.railway.app'
     );
   } else {
     // Server-side: use environment variable or fallback
-    return process.env.STRAPI_URL || 'https://presentacion-taglit.onrender.com';
+    return (
+      process.env.STRAPI_URL ||
+      'https://taglit-backend-production.up.railway.app'
+    );
   }
 }
 
