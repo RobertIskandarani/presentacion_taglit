@@ -1,15 +1,26 @@
 import { useState } from 'react';
 import React from 'react';
 import { createAnswer } from '../lib/answers-api';
-import { LuSendHorizontal } from 'react-icons/lu';
+import { LuCheck, LuSendHorizontal } from 'react-icons/lu';
 
 export default function AnswerInput() {
   const [answer, setAnswer] = useState('');
+  const [sended, setSended] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     createAnswer(answer);
+    setSended(true);
   };
+
+  if (sended) {
+    return (
+      <div className='w-full flex text-bg-planets justify-center items-center flex-col gap-5 p-5 rounded-lg bg-[#7aff73]'>
+        <LuCheck size={64} />
+        <p className='text-center'>Respuesta enviada con éxito</p>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className='w-full flex flex-col gap-10'>
