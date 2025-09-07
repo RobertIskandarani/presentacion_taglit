@@ -80,3 +80,55 @@ footer .orbit-3::before {
     transform: translateX(0);
   }
 }
+
+@keyframes rain {
+  0% {
+    transform: perspective(1000px) rotateX(15deg) translateY(-300px)
+      translateZ(0px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(15deg)
+      translateY(calc(100vh + 300px)) translateZ(0px);
+    opacity: 0;
+  }
+}
+
+.animate-rain {
+  animation: rain linear infinite;
+}
+
+@keyframes flagWave {
+  0% {
+    transform: rotate(0deg) scaleY(1);
+  }
+  25% {
+    transform: rotate(2deg) scaleY(1.05);
+  }
+  50% {
+    transform: rotate(0deg) scaleY(1);
+  }
+  75% {
+    transform: rotate(-2deg) scaleY(0.95);
+  }
+  100% {
+    transform: rotate(0deg) scaleY(1);
+  }
+}
+
+.animate-flag {
+  animation: flagWave 3s ease-in-out infinite;
+  transform-origin: center bottom;
+}
