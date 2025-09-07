@@ -20,10 +20,25 @@ export interface AnswersResponse {
   };
 }
 
+// Get the Strapi URL from environment variables
+function getStrapiUrl(): string {
+  if (typeof window !== 'undefined') {
+    // Client-side: use environment variable or fallback
+    return (
+      import.meta.env.PUBLIC_STRAPI_URL ||
+      'https://presentacion-taglit.onrender.com'
+    );
+  } else {
+    // Server-side: use environment variable or fallback
+    return process.env.STRAPI_URL || 'https://presentacion-taglit.onrender.com';
+  }
+}
+
 // Fetch all answers
 export async function getAnswers(): Promise<AnswersResponse> {
   try {
-    const response = await fetch('http://localhost:1337/api/answers');
+    const strapiUrl = getStrapiUrl();
+    const response = await fetch(`${strapiUrl}/api/answers`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -47,7 +62,8 @@ export async function getAnswers(): Promise<AnswersResponse> {
 // Fetch a single answer by ID
 export async function getAnswer(id: number): Promise<Answer | null> {
   try {
-    const response = await fetch(`http://localhost:1337/api/answers/${id}`);
+    const strapiUrl = getStrapiUrl();
+    const response = await fetch(`${strapiUrl}/api/answers/${id}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -62,7 +78,8 @@ export async function getAnswer(id: number): Promise<Answer | null> {
 // Create a new answer
 export async function createAnswer(answer: string): Promise<Answer | null> {
   try {
-    const response = await fetch('http://localhost:1337/api/answers', {
+    const strapiUrl = getStrapiUrl();
+    const response = await fetch(`${strapiUrl}/api/answers`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
