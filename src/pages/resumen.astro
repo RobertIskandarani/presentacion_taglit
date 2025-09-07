@@ -56,17 +56,17 @@ const subSectionsInfo = [
     <main class="w-full h-screen flex flex-col gap-5 p-20 bg-bg-cloudy">
         <section class="w-full flex gap-5 h-48">
             {subSectionsInfo.slice(0,3).map((subSection, index) => 
-                <DescriptionCard key={index} src={subSection.src} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
+                <DescriptionCard src={subSection.src} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
             )}
         </section>
         <section class="w-full flex gap-5 h-48">
             {subSectionsInfo.slice(3,6).map((subSection, index) => 
-                <DescriptionCard key={index + 3} src={subSection.src} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
+                <DescriptionCard src={subSection.src} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
             )}
         </section>
         <section class="w-full flex gap-5 h-48">
             {subSectionsInfo.slice(6,9).map((subSection, index) => 
-                <DescriptionCard key={index + 6} src={subSection.src} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
+                <DescriptionCard src={subSection.src} title={subSection.title} backgroundColor={subSection.backgroundColor}/>
             )}
         </section>
         <section class="w-full text-5xl font-rubik-doodle flex gap-5 justify-center items-center py-5">
