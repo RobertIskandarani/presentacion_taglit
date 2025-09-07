@@ -7,6 +7,25 @@ export default ({ env }) => {
   console.log('- Client:', client);
   console.log('- Database URL exists:', !!env('DATABASE_URL'));
   console.log('- Environment:', env('NODE_ENV'));
+  console.log(
+    '- All env vars:',
+    Object.keys(process.env).filter((key) => key.includes('DATABASE'))
+  );
+
+  if (env('DATABASE_URL')) {
+    console.log(
+      '- DATABASE_URL (first 20 chars):',
+      env('DATABASE_URL').substring(0, 20) + '...'
+    );
+  } else {
+    console.log('- DATABASE_URL: NOT SET');
+    console.log(
+      '- Available Railway vars:',
+      Object.keys(process.env).filter(
+        (key) => key.includes('RAILWAY') || key.includes('POSTGRES')
+      )
+    );
+  }
 
   const connections = {
     mysql: {
