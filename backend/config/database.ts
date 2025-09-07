@@ -3,6 +3,11 @@ import path from 'path';
 export default ({ env }) => {
   const client = env('DATABASE_CLIENT', 'postgres');
 
+  console.log('Database configuration:');
+  console.log('- Client:', client);
+  console.log('- Database URL exists:', !!env('DATABASE_URL'));
+  console.log('- Environment:', env('NODE_ENV'));
+
   const connections = {
     mysql: {
       connection: {

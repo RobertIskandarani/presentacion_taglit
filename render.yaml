@@ -3,7 +3,7 @@ services:
     name: taglit-backend
     env: node
     plan: free
-    buildCommand: cd backend && npm install && npm run build
+    buildCommand: cd backend && npm ci && npm run build
     startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
@@ -26,6 +26,12 @@ services:
         generateValue: true
       - key: JWT_SECRET
         generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: STRAPI_TELEMETRY_DISABLED
+        value: 'true'
+      - key: STRAPI_DISABLE_UPDATE_NOTIFICATION
+        value: 'true'
 
   - type: pserv
     name: taglit-database
