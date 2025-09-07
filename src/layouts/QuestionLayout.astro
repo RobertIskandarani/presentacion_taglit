@@ -1,12 +1,14 @@
 ---
 import '../styles/index.css';
 import AnswerInput from '../components/AnswerInput';
+import Question from '../components/Question';
 
 interface Props {
   title: string;
+  question: string;
 }
 
-const { title } = Astro.props;
+const { title, question } = Astro.props;
 ---
 
 <!doctype html>
@@ -29,8 +31,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class='flex flex-col items-center justify-center h-screen'>
-      <slot />
+    <div class='flex flex-col p-4 gap-10 items-center justify-center h-screen'>
+      <slot name='icon' />
+      <Question client:idle question={question} />
       <AnswerInput client:idle />
     </div>
   </body>
